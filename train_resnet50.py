@@ -15,7 +15,7 @@ from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 DATASET_PATH  = '/data/catsdogs/sample'
 IMAGE_SIZE    = (224, 224)
 NUM_CLASSES   = 2
-BATCH_SIZE    = 8
+BATCH_SIZE    = 8  # try reducing batch size or freeze more layers if your GPU runs out of memory
 FREEZE_LAYERS = 2  # freeze the first this many layers for training
 NUM_EPOCHS    = 20
 WEIGHTS_FINAL = 'model-resnet50-final.h5'
