@@ -1,3 +1,9 @@
+'''
+This script goes along my blog post:
+"Keras Cats Dogs Tutorial" (https://jkjung-avt.github.io/keras-tutorial/)
+'''
+
+
 from tensorflow.python.keras import backend as K
 from tensorflow.python.keras.models import load_model
 from tensorflow.python.keras.applications.resnet50 import preprocess_input
@@ -10,9 +16,9 @@ import numpy as np
 
 
 def parse_args():
-    """
+    '''
     Parse input arguments
-    """
+    '''
     parser = argparse.ArgumentParser()
     parser.add_argument('path')
     args = parser.parse_args()
