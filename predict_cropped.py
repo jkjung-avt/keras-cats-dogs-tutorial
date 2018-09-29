@@ -1,24 +1,24 @@
-'''
+"""
 This script goes along my blog post:
-"Extending Keras' ImageDataGenerator to Support Random Cropping" (https://jkjung-avt.github.io/keras-image-cropping/)
-'''
+'Extending Keras ImageDataGenerator to Support Random Cropping' (https://jkjung-avt.github.io/keras-image-cropping/)
+"""
 
 
-from tensorflow.python.keras import backend as K
-from tensorflow.python.keras.models import load_model
-from tensorflow.python.keras.applications.resnet50 import preprocess_input
-from tensorflow.python.keras.preprocessing import image
 import os
 import sys
 import glob
 import argparse
+
 import numpy as np
+from tensorflow.python.keras import backend as K
+from tensorflow.python.keras.models import load_model
+from tensorflow.python.keras.applications.resnet50 import preprocess_input
+from tensorflow.python.keras.preprocessing import image
 
 
 def parse_args():
-    '''
-    Parse input arguments
-    '''
+    """Parse input arguments.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument('path')
     args = parser.parse_args()
@@ -55,7 +55,7 @@ if __name__ == '__main__':
     cls_list = ['cats', 'dogs']
 
     # load the trained model
-    net = load_model('model-resnet50-final.h5')
+    net = load_model('model-cropped-final.h5')
 
     # loop through all files and make predictions
     for f in files:

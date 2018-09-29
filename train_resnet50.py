@@ -1,7 +1,7 @@
-'''
+"""
 This script goes along my blog post:
-"Keras Cats Dogs Tutorial" (https://jkjung-avt.github.io/keras-tutorial/)
-'''
+Keras Cats Dogs Tutorial (https://jkjung-avt.github.io/keras-tutorial/)
+"""
 
 
 from tensorflow.python.keras import backend as K
@@ -12,7 +12,7 @@ from tensorflow.python.keras.optimizers import Adam
 from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 
 
-DATASET_PATH  = '/data/catsdogs/sample'
+DATASET_PATH  = './catsdogs/sample'
 IMAGE_SIZE    = (224, 224)
 NUM_CLASSES   = 2
 BATCH_SIZE    = 8  # try reducing batch size or freeze more layers if your GPU runs out of memory
@@ -75,7 +75,7 @@ print(net_final.summary())
 # train the model
 net_final.fit_generator(train_batches,
                         steps_per_epoch = train_batches.samples // BATCH_SIZE,
-                        validation_data = valid_batches, 
+                        validation_data = valid_batches,
                         validation_steps = valid_batches.samples // BATCH_SIZE,
                         epochs = NUM_EPOCHS)
 

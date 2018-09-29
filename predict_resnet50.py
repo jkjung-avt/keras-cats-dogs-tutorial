@@ -1,24 +1,24 @@
-'''
+"""
 This script goes along my blog post:
-"Keras Cats Dogs Tutorial" (https://jkjung-avt.github.io/keras-tutorial/)
-'''
+'Keras Cats Dogs Tutorial' (https://jkjung-avt.github.io/keras-tutorial/)
+"""
 
 
-from tensorflow.python.keras import backend as K
-from tensorflow.python.keras.models import load_model
-from tensorflow.python.keras.applications.resnet50 import preprocess_input
-from tensorflow.python.keras.preprocessing import image
 import os
 import sys
 import glob
 import argparse
+
 import numpy as np
+from tensorflow.python.keras import backend as K
+from tensorflow.python.keras.models import load_model
+from tensorflow.python.keras.applications.resnet50 import preprocess_input
+from tensorflow.python.keras.preprocessing import image
 
 
 def parse_args():
-    '''
-    Parse input arguments
-    '''
+    """Parse input arguments.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument('path')
     args = parser.parse_args()
